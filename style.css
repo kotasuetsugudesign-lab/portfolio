@@ -1,0 +1,460 @@
+/* =========================================
+   Reset + Base
+========================================= */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Inter', 'Noto Serif JP', sans-serif;
+  font-size: 16px;
+  line-height: 1.8;
+  color: #333;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  vertical-align: bottom;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* =========================================
+   Header
+========================================= */
+
+.header {
+  padding: 32px 24px;
+}
+
+.header a {
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  font-size: 14px;
+  color: #222;
+}
+
+/* =========================================
+   First View
+========================================= */
+
+.fv {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.fv-title {
+  font-family: 'Noto Serif JP', serif;
+  font-size: clamp(32px, 6vw, 56px);
+  line-height: 1.2;
+  letter-spacing: 0.04em;
+}
+
+.fv-sub {
+  margin-top: 24px;
+  font-size: 16px;
+  color: #777;
+}
+/* =========================================
+   Note
+========================================= */
+
+.note {
+  text-align: center;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 80px;
+}
+
+
+
+/* About */
+.about {
+  padding-top: 40px;
+  padding-bottom: 40px;
+}
+
+.about-inner {
+  max-width: 700px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.about-role {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #999;
+}
+
+
+.about-text h3 {
+  font-size: 24px;
+  margin-bottom: 16px;
+  line-height: 2;
+}
+
+.about-text p {
+  color: #555;
+  margin-bottom: 24px;
+}
+
+.about-strength {
+  display: inline-block;
+  text-align: left;
+  font-size: 14px;
+  color: #666;
+}
+
+.about-strength li {
+  margin-bottom: 8px;
+}
+
+.about-note {
+  margin-top: 20px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* =========================================
+   Section
+========================================= */
+
+.section {
+  max-width: 1100px;
+  margin: 0 auto 120px;
+  padding: 0 24px;
+}
+
+.work-section {
+  text-align: left;
+}
+
+.section-title {
+  font-size: 28px;
+  font-weight: 600;
+  text-align: center;
+  margin-bottom: 64px;
+  letter-spacing: 0.05em;
+}
+
+/* =========================================
+   Works Grid
+========================================= */
+
+.works-list {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+}
+
+.work-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border-radius: 20px;
+  background: linear-gradient(
+    to bottom,
+    #ffffff 0%,
+    #f8f8f8 100%
+  );
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+
+
+
+.work-card.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+.work-card:hover {
+  background: #ffffff;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+}
+
+.work-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+  border-radius: 16px;
+  margin: 16px 0 20px;
+}
+
+.work-card h3 {
+  font-size: 20px;
+  margin-bottom: 12px;
+}
+
+.work-desc {
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 12px;
+}
+
+.work-tech {
+  margin-top: auto;
+  font-size: 13px;
+  color: #999;
+}
+
+/* =========================================
+   Work Detail Page – Pro Version
+========================================= */
+
+.work-detail {
+  max-width: 900px;
+  margin: 160px auto;
+  padding: 0 32px;
+  text-align: center;
+}
+
+/* ヘッダー */
+.work-header {
+  text-align: center;
+  margin-bottom: 80px;
+}
+
+.work-header h1 {
+  font-size: 42px;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  margin-bottom: 12px;
+}
+
+.work-meta {
+  font-size: 14px;
+  color: #777;
+  margin-bottom: 20px;
+}
+
+.work-catch {
+  font-size: 18px;
+  color: #555;
+  margin-bottom: 40px;
+}
+
+/* ボタン */
+.btn-view {
+  display: inline-block;
+  padding: 18px 56px;
+  background: #111;
+  color: #fff;
+  border-radius: 999px;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  margin-top: 32px;
+}
+
+.btn-view:hover {
+  background: #333;
+  transform: translateY(-2px);
+}
+
+/* ビジュアル */
+.work-visual {
+  margin: 40px 0 100px;
+  text-align: center;
+}
+
+.work-visual a {
+  display: inline-block;
+}
+
+.work-visual img {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.work-visual a:hover img {
+  transform: scale(1.02);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.2);
+}
+
+.work-visual img {
+   width: 90%;
+  max-width: 900px;
+  border-radius: 20px;
+  box-shadow: 0 40px 80px rgba(0,0,0,0.12);
+}
+
+.note {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #777;
+}
+
+/* セクション */
+.work-section {
+  margin-bottom: 100px;
+  padding: 40px;
+  background: #fafafa;
+  border-radius: 16px;
+}
+
+.work-section:nth-child(even) {
+  background: #f3f3f3;
+}
+
+.work-section h2 {
+  font-size: 24px;
+  margin-bottom: 24px;
+  position: relative;
+  padding-left: 18px;
+}
+
+.work-section h2::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 8px;
+  width: 6px;
+  height: 18px;
+  background: #111;
+}
+
+.work-section p {
+  line-height: 1.8;
+  color: #555;
+}
+
+.work-section ul {
+  padding-left: 20px;
+}
+
+.work-section li {
+  margin-bottom: 12px;
+  color: #555;
+}
+
+/* 技術タグ */
+.tech-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.tech-list span {
+  padding: 6px 14px;
+  border: 1px solid #ddd;
+  border-radius: 999px;
+  font-size: 13px;
+  background: #fff;
+}
+
+/* 技術タグをカード用にアップグレード */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: auto;
+}
+
+.tech-tags span {
+  font-size: 12px;
+  padding: 6px 12px;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  border-radius: 999px;
+  color: #555;
+  transition: 0.2s ease;
+}
+
+.work-card:hover .tech-tags span {
+  background: #111;
+  color: #fff;
+  border-color: #111;
+}
+
+/* 戻るリンク */
+.back-link {
+  display: inline-block;
+  margin-top: 40px;
+  font-size: 14px;
+  color: #777;
+}
+
+.back-link:hover {
+  text-decoration: underline;
+}
+
+
+/* =========================================
+   Footer
+========================================= */
+
+.footer {
+  padding: 60px 24px;
+  text-align: center;
+  font-size: 12px;
+  color: #999;
+}
+
+/* =========================================
+   Responsive
+========================================= */
+
+@media (max-width: 900px) {
+  .works-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 600px) {
+  .works-list {
+    grid-template-columns: 1fr;
+  }
+
+  .fv {
+    min-height: auto;
+    padding: 120px 24px 80px;
+  }
+
+  .section {
+    margin-bottom: 80px;
+  }
+}
+
+/* レスポンシブ */
+@media (max-width: 768px) {
+
+  .work-detail {
+    margin: 100px auto;
+    padding: 0 20px;
+  }
+
+  .work-header h1 {
+    font-size: 28px;
+  }
+
+  .work-catch {
+    font-size: 16px;
+  }
+
+  .work-section {
+    padding: 24px;
+  }
+}
