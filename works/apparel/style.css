@@ -1,0 +1,573 @@
+/* =====================
+   Reset
+===================== */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Inter", sans-serif;
+  color: #222;
+  background: #fff;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: "Cormorant Garamond", serif;
+}
+
+img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* =====================
+   Layout Base
+===================== */
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.section {
+  padding: 120px 0;
+  scroll-margin-top: 120px;
+}
+
+.section-title {
+  font-size: 32px;
+  font-weight: 500;
+  margin-bottom: 80px;
+  text-align: center;
+  letter-spacing: 0.05em;
+}
+
+
+/* =====================
+   Header
+===================== */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background: transparent;
+  transition: background 0.4s ease, padding 0.4s ease, border 0.4s ease;
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+.header-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 28px 24px;
+}
+
+.header.scrolled {
+  background: #fff;
+  border-bottom: 1px solid #eee;
+}
+
+.header.scrolled .header-inner {
+  padding: 18px 24px;
+}
+
+.logo {
+  font-size: 16px;
+  font-weight: 500;
+  letter-spacing: 0.3em;
+}
+
+.nav ul {
+  display: flex;
+  gap: 40px;
+}
+
+.nav a {
+  position: relative;
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #777;
+  transition: color 0.3s ease;
+}
+
+.nav a:hover {
+  color: #000;
+}
+
+.nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #333;
+  opacity: 0.7;
+  transition: width 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+.nav a:hover::after {
+  width: 100%;
+}
+
+.hamburger {
+  display: none;
+}
+
+
+/* =====================
+   Hero
+===================== */
+
+.hero {
+  padding-top: 160px;
+  border-top: 1px solid rgba(0,0,0,0.05);
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  gap: 100px;
+}
+
+.hero-text h2 {
+  font-size: 56px;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+}
+
+.hero-text p {
+  font-size: 18px;
+  color: #666;
+  line-height: 1.9;
+}
+
+.btn {
+  display: inline-block;
+  padding: 16px 42px;
+  background: #111;
+  color: #fff;
+  font-size: 13px;
+  letter-spacing: 0.15em;
+  border: 1px solid #111;
+  transition: all 0.3s ease;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #111;
+}
+
+.hero-text .btn {
+  margin-top: 32px;
+}
+
+.hero-image img {
+  border-radius: 4px;
+}
+
+/* =====================
+   Concept
+===================== */
+
+.concept-inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 100px;
+  align-items: center;
+}
+
+.concept-image img {
+  box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+}
+
+.concept-text h3 {
+  font-size: 36px;
+  margin-bottom: 24px;
+  font-weight: 500;
+}
+
+.concept-text p {
+  font-size: 16px;
+  color: #666;
+  line-height: 2;
+}
+
+
+
+
+
+/* =====================
+   Collection
+===================== */
+
+.collection {
+  padding-top: 200px;
+  padding-bottom: 120px;
+}
+
+.collection .section-title {
+  font-size: 36px;
+  letter-spacing: 0.1em;
+  margin-bottom: 160px;
+}
+
+.category {
+  margin-bottom: 240px;
+}
+
+.category:last-child {
+  margin-bottom: 0;
+}
+
+.category-title {
+  text-align: center;
+  font-size: 18px;
+  letter-spacing: 0.45em;
+  color: #888;
+  margin-bottom: 100px;
+  position: relative;
+}
+
+.category-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 1px;
+  background: #222;
+  margin: 26px auto 0;
+}
+
+
+/* =====================
+   Product Grid
+===================== */
+
+.product-grid {
+  display: flex;
+  gap: 70px;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 24px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px 16px;
+  scrollbar-width: thin;
+  scrollbar-color: #ddd transparent;
+}
+
+.product-grid::-webkit-scrollbar {
+  height: 4px;
+}
+
+.product-grid::-webkit-scrollbar-thumb {
+  background: #ddd;
+  border-radius: 10px;
+}
+
+
+/* =====================
+   Product Card
+===================== */
+
+.product-card {
+  flex: 0 0 360px;
+  scroll-snap-align: start;
+  transition: transform 0.5s cubic-bezier(.22,1,.36,1);
+  text-align: center;
+}
+
+.product-card img {
+  aspect-ratio: 3 / 4;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+  transition: transform 0.6s ease, filter 0.4s ease;
+}
+
+.product-card:hover {
+  transform: translateY(-8px);
+}
+
+.product-card:hover img {
+  transform: scale(1.02);
+  filter: brightness(0.97);
+}
+
+.product-title {
+  font-size: 15px;
+  margin: 22px 0 8px;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+}
+
+.product-price {
+  font-size: 14px;
+  color: #777;
+  letter-spacing: 0.05em;
+}
+
+
+/* =====================
+   Lookbook
+===================== */
+
+.lookbook {
+  padding: 240px 0;
+}
+
+.lookbook .section-title {
+  margin-bottom: 180px;
+  letter-spacing: 0.15em;
+}
+
+.look-full,
+.look-grid,
+.look-end {
+  opacity: 0;
+  transform: translateY(80px);
+  transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.look-full.active,
+.look-grid.active,
+.look-end.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.look-full {
+  margin-bottom: 160px;
+}
+
+.look-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 140px;
+  margin-bottom: 200px;
+}
+
+.look-end {
+  max-width: 720px;
+  margin: 0 auto;
+}
+
+/* ★ 修正済みここ */
+
+.look-full img,
+.look-grid img,
+.look-end img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.04);
+}
+
+
+/* =====================
+   Philosophy
+===================== */
+
+.philosophy {
+  padding: 300px 0;
+  text-align: center;
+  opacity: 0;
+  transform: translateY(60px);
+  transition: opacity 1.2s ease, transform 1.2s ease;
+}
+
+.philosophy.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.philosophy-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.philosophy-sub {
+  font-size: 12px;
+  letter-spacing: 0.4em;
+  color: #999;
+  margin-bottom: 70px;
+}
+
+.philosophy-main {
+  font-size: 56px;
+  line-height: 1.35;
+  margin-bottom: 90px;
+}
+
+.philosophy-description {
+  font-size: 18px;
+  line-height: 2.2;
+  color: #666;
+}
+
+
+/* =====================
+   Footer
+===================== */
+
+.footer {
+  padding: 120px 0 60px;
+  border-top: 1px solid #eee;
+}
+
+.footer-inner {
+  text-align: center;
+}
+
+.footer-logo {
+  font-size: 18px;
+  letter-spacing: 0.3em;
+  margin-bottom: 40px;
+}
+
+.footer-nav {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-bottom: 50px;
+}
+
+.footer-nav a {
+  font-size: 14px;
+  letter-spacing: 0.1em;
+  color: #777;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.footer-nav a:hover {
+  color: #000;
+}
+
+.footer-copy {
+  font-size: 12px;
+  color: #aaa;
+}
+
+
+/* =====================
+   SP
+===================== */
+
+@media (max-width: 768px) {
+
+  .section {
+    padding: 80px 0;
+  }
+
+  .nav {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1100;
+  }
+
+  .hamburger span {
+    width: 22px;
+    height: 1.5px;
+    background: #000;
+    transition: 0.3s ease;
+  }
+
+  .nav.active {
+    display: flex;
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100vh;
+    background: rgba(255,255,255,0.95);
+    backdrop-filter: blur(8px);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav.active ul {
+    flex-direction: column;
+    gap: 48px;
+  }
+
+
+  .hero-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .hero-text h2 {
+    font-size: 38px;
+  }
+
+    .concept-inner {
+    grid-template-columns: 1fr;
+    gap: 60px;
+    text-align: center;
+  }
+
+  .concept-text h3 {
+    font-size: 28px;
+  }
+
+
+  .product-grid {
+    gap: 32px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  .product-card {
+    flex: 0 0 78%;
+  }
+
+  .look-grid {
+    grid-template-columns: 1fr;
+    gap: 60px;
+  }
+
+  .philosophy-main {
+    font-size: 34px;
+  }
+
+  .footer-nav {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+}
